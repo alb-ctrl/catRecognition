@@ -1,0 +1,68 @@
+<html>
+<body>
+  <div>
+    <p>Upload Image of cats</p>
+  </div>
+   <form enctype = "multipart/form-data" action = "save_file.py" id="new_cat">
+   <p>File: <input type = "file" name = "filename" /></p>
+   <p><input type = "submit" value = "Upload" /></p>
+</form>
+<div>
+  <p>This model is built from images of different breeds of cats.
+    100 images of each label were compiled. This image set was partitioned into batches for a training model and a training set.
+     After the training of the model was complete, the testing set (of size n=100) had a validation accuracy rate of 95%. A Cross entropy of 0.340869
+     This accuracy rate could be improved by using a bigger sample size of images for the training set. 
+     To improve accuracy, I could have also increased the number of training steps used in training the model (In order to save time, 
+     I only let the training command iterate for a maximum of 500 times.)</p>
+<p>
+  Another way to increase the accuracy of my model would've been to use
+   <a href="https://www.tensorflow.org/tutorials/images/data_augmentation">Data Augmentation</a><br> 
+   Data augmentation is when you make a small, existing dataset larger through manipulating each image to create slightly different copies of it. 
+   This is helpful for smaller datasets.
+</p>
+</div>
+<div id="result">
+
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script>
+  $(document).ready(function() {
+    $('#new_cat').on("submit", function(event){  
+   event.preventDefault();
+   var formData = new FormData(this);  
+ 
+    $.ajax({  
+     url:"../cgi-bin/save_file.py",  
+     method:"POST",  
+     data:formData,
+     cache:false,
+     contentType: false,
+    processData: false, 
+     success:
+     function(data){
+       $("#result").empty();
+     //console.log(data);
+     //alert(data);  
+     //$('#test').html(data); 
+     },
+     error: function(xhr, status, error){
+          var errorMessage = xhr.status + ': ' + xhr.statusText
+          alert('Error - ' + errorMessage);
+      }  
+    }).done(function(data){
+     console.log(data);
+     $("#result").html(data);
+     
+ }); 
+   
+  });
+ 
+ });
+  </script>
+
+
+</body>
+</html>
