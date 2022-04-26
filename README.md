@@ -22,5 +22,5 @@ tensorflow-io-gcs-filesystem 0.24.0
 
 ### Common issues
 In case of errors during using preduct.py
-It dependes on your model input and output labels
-see model.txt to see the list of labels or run seemodel.py to create the list
+It dependes on your model input and output layer
+see model.txt to see the list of layers or run seemodel.py to create the list
