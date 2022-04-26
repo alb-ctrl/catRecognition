@@ -20,6 +20,9 @@ tensorflow-estimator         1.15.1
 tensorflow-hub               0.12.0
 tensorflow-io-gcs-filesystem 0.24.0
 
+### numpy
+numpy                        1.21.5
+
 ### Common issues
 In case of errors during using preduct.py
 It dependes on your model input and output layer
