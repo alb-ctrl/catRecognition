@@ -4,7 +4,7 @@
 python3 retrain.py --image_dir={your image folder} --how_many_training_steps=500 --output_graph=IMG_graph.pb --output_labels=IMG_labels.txt --summaries_dir=summaries
 
 ## How to test your model
-/usr/bin/python3 datamining3.py --image {path to your image input} --labels {path to your/}abels.txt --graph {path to your model} --input_layer Placeholder
+/usr/bin/python3 predict.py --image {path to your image input} --labels {path to your/}abels.txt --graph {path to your model} --input_layer Placeholder
 
 ### System configuration
 #### Python
