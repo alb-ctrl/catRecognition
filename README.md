@@ -19,3 +19,8 @@ tensorflow                   1.15.0
 tensorflow-estimator         1.15.1
 tensorflow-hub               0.12.0
 tensorflow-io-gcs-filesystem 0.24.0
+
+### Common issues
+In case of errors during using preduct.py
+It dependes on your model input and output labels
+see model.txt to see the list of labels or run seemodel.py to create the list
